@@ -9,8 +9,53 @@ export default {
   methods: {
     operation(e) {
       const n = e.currentTarget.value;
+
+      if (n === "C") {
+        this.output = "";
+        this.cur = "";
+        return;
+      }
+
+      if (n === "=") {
+        this.calculate();
+        return;
+      }
+
       this.cur = this.cur === null ? n : (this.cur += n);
       this.output = this.cur;
+    },
+    calculate() {
+      let operator = "";
+
+      if (this.cur.includes("+")) {
+        operator = "+";
+      } else if (this.cur.includes("-")) {
+        operator = "-";
+      } else if (this.cur.includes("*")) {
+        operator = "*";
+      } else if (this.cur.includes("/")) {
+        operator = "/";
+      } else {
+        return;
+      }
+
+      const left = Number(this.cur.split(operator)[0]);
+      const right = Number(this.cur.split(operator)[1]);
+
+      let result = 0;
+
+      if (operator === "+") {
+        result = left + right;
+      } else if (operator === "-") {
+        result = left - right;
+      } else if (operator === "*") {
+        result = left * right;
+      } else if (operator === "/") {
+        result = left / right;
+      }
+
+      this.cur = String(result);
+      this.output = String(result);
     },
   },
 };
