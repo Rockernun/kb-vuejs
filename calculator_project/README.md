@@ -34,5 +34,5 @@
   - [x] 클릭 이벤트 처리(@click) 연결 -> 클릭 이벤트에 따른 이벤트 핸들러(operation())를 작성해야 함
 
 - 계산기 로직 구현
-  - 계산을 담당하는 로직은 operation() 함수 내에 정의해야 함: <input> 태그의 value 속성에 할당된 값을 가져와서 출력하면 됨 -> @click="operation()"으로 할 경우 그냥 인자 없이 함수를 직접 호출하므로 이벤트(e) 자체가 undefined임. 따라서 @click="operation" 처럼 Vue가 알아서 넘겨주도록 처리해야 함.
-  - 입력값(e.currentTarget.value)를 output 화면에 뿌려줘야 함.
+  - [x] 계산을 담당하는 로직은 operation() 함수 내에 정의해야 함: <input> 태그의 value 속성에 할당된 값을 가져와서 출력하면 됨 -> @click="operation()"으로 할 경우 그냥 인자 없이 함수를 직접 호출하므로 이벤트(e) 자체가 undefined임. 따라서 @click="operation" 처럼 Vue가 알아서 넘겨주도록 처리해야 함.
+  - [x] 입력값(e.currentTarget.value)를 output 화면에 뿌려줘야 함.
