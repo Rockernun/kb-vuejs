@@ -4,24 +4,29 @@ export default {};
 <template>
   <div class="calculator">
     <form name="forms">
-      <input type="text" name="output" readonly />
-      <input type="button" class="clear" value="C" />
-      <input type="button" class="operator" value="/" />
-      <input type="button" value="1" />
-      <input type="button" value="2" />
-      <input type="button" value="3" />
-      <input type="button" class="operator" value="*" />
-      <input type="button" value="4" />
-      <input type="button" value="5" />
-      <input type="button" value="6" />
-      <input type="button" class="operator" value="+" />
-      <input type="button" value="7" />
-      <input type="button" value="8" />
-      <input type="button" value="9" />
-      <input type="button" class="operator" value="-" />
-      <input type="button" class="dot" value="." />
-      <input type="button" value="0" />
-      <input type="button" class="operator result" value="=" />
+      <input type="text" v-model="output" name="output" readonly />
+      <input type="button" class="clear" value="C" @click="operation()" />
+      <input type="button" class="operator" value="/" @click="operation()" />
+      <input type="button" value="1" @click="operation()" />
+      <input type="button" value="2" @click="operation()" />
+      <input type="button" value="3" @click="operation()" />
+      <input type="button" class="operator" value="*" @click="operation()" />
+      <input type="button" value="4" @click="operation()" />
+      <input type="button" value="5" @click="operation()" />
+      <input type="button" value="6" @click="operation()" />
+      <input type="button" class="operator" value="+" @click="operation()" />
+      <input type="button" value="7" @click="operation()" />
+      <input type="button" value="8" @click="operation()" />
+      <input type="button" value="9" @click="operation()" />
+      <input type="button" class="operator" value="-" @click="operation()" />
+      <input type="button" class="dot" value="." @click="operation()" />
+      <input type="button" value="0" @click="operation()" />
+      <input
+        type="button"
+        class="operator result"
+        value="="
+        @click="operation()"
+      />
     </form>
   </div>
 </template>
